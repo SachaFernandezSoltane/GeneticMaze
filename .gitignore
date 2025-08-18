@@ -1,6 +1,25 @@
-.venv
-./venv
-/venv
-.idea
-./idea
-/idea
+# Environnements virtuels
+.venv/
+venv/
+ENV/
+env/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers de logs et de base de données
+*.log
+*.sqlite3
+*.db
+
+# Fichiers IDE
+.idea/
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db

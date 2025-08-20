@@ -190,7 +190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="web/index.html" class="md-nav__link">
+      <a href="web/" class="md-nav__link">
         
   
   
@@ -668,7 +668,7 @@
 <span class="sd">        Generate the maze using a randomized frontier-based algorithm.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            list[list[int | str]]: 2D list representing the generated maze</span>
+<span class="sd">            (list[list[int | str]]): 2D list representing the generated maze</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Create a grid filled with walls (1)</span>
         <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)]</span>
@@ -716,7 +716,7 @@
 <span class="sd">            grid (list[list[int | str]]): The maze grid</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            list[tuple[int, int]]: List of valid neighbor coordinates</span>
+<span class="sd">            (list[tuple[int, int]]): List of valid neighbor coordinates</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">directions</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
         <span class="n">neighbors</span> <span class="o">=</span> <span class="p">[]</span>
@@ -855,10 +855,11 @@
       <tbody>
           <tr class="doc-section-item">
             <td>
+                  <code><span title="list">list</span>[<span title="list">list</span>[<span title="int">int</span> | <span title="str">str</span>]]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>list[list[int | str]]: 2D list representing the generated maze</p>
+                <p>2D list representing the generated maze</p>
               </div>
             </td>
           </tr>
@@ -914,7 +915,7 @@
 <span class="sd">    Generate the maze using a randomized frontier-based algorithm.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        list[list[int | str]]: 2D list representing the generated maze</span>
+<span class="sd">        (list[list[int | str]]): 2D list representing the generated maze</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Create a grid filled with walls (1)</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)]</span>
@@ -1045,10 +1046,11 @@
       <tbody>
           <tr class="doc-section-item">
             <td>
+                  <code><span title="list">list</span>[<span title="tuple">tuple</span>[<span title="int">int</span>, <span title="int">int</span>]]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>list[tuple[int, int]]: List of valid neighbor coordinates</p>
+                <p>List of valid neighbor coordinates</p>
               </div>
             </td>
           </tr>
@@ -1088,7 +1090,7 @@
 <span class="sd">        grid (list[list[int | str]]): The maze grid</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        list[tuple[int, int]]: List of valid neighbor coordinates</span>
+<span class="sd">        (list[tuple[int, int]]): List of valid neighbor coordinates</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">directions</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
     <span class="n">neighbors</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2066,7 +2068,7 @@ SELECTING_BEST_INDIVIDUALS (int): Number of best individuals to select for cross
 <span class="sd">            moves (list[str]): List of moves (&#39;up&#39;, &#39;down&#39;, &#39;left&#39;, &#39;right&#39;).</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            list[str]: Mutated list of moves.</span>
+<span class="sd">            (list[str]): Mutated list of moves.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">]</span>
         <span class="n">mutated_moves</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2087,7 +2089,7 @@ SELECTING_BEST_INDIVIDUALS (int): Number of best individuals to select for cross
 <span class="sd">            sections (int, optional): Number of sections to split moves. Defaults to 4.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            list[list[str]]: List of children moves generated by different patterns.</span>
+<span class="sd">            (list[list[str]]): List of children moves generated by different patterns.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
         <span class="n">step</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="n">sections</span>
@@ -2481,10 +2483,11 @@ individuals are selected to fill the remaining slots.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>list[str]: Mutated list of moves.</p>
+                <p>Mutated list of moves.</p>
               </div>
             </td>
           </tr>
@@ -2519,7 +2522,7 @@ individuals are selected to fill the remaining slots.</p>
 <span class="sd">        moves (list[str]): List of moves (&#39;up&#39;, &#39;down&#39;, &#39;left&#39;, &#39;right&#39;).</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        list[str]: Mutated list of moves.</span>
+<span class="sd">        (list[str]): Mutated list of moves.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">]</span>
     <span class="n">mutated_moves</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2623,10 +2626,11 @@ individuals are selected to fill the remaining slots.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
+                  <code><span title="list">list</span>[<span title="list">list</span>[<span title="str">str</span>]]</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>list[list[str]]: List of children moves generated by different patterns.</p>
+                <p>List of children moves generated by different patterns.</p>
               </div>
             </td>
           </tr>
@@ -2676,7 +2680,7 @@ individuals are selected to fill the remaining slots.</p>
 <span class="sd">        sections (int, optional): Number of sections to split moves. Defaults to 4.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        list[list[str]]: List of children moves generated by different patterns.</span>
+<span class="sd">        (list[list[str]]): List of children moves generated by different patterns.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
     <span class="n">step</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="n">sections</span>

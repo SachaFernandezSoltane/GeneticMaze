@@ -27,7 +27,7 @@ class MazeGenerator:
         Generate the maze using a randomized frontier-based algorithm.
 
         Returns:
-            list[list[int | str]]: 2D list representing the generated maze
+            (list[list[int | str]]): 2D list representing the generated maze
         """
         # Create a grid filled with walls (1)
         grid = [[1 for _ in range(self.width)] for _ in range(self.height)]
@@ -75,7 +75,7 @@ class MazeGenerator:
             grid (list[list[int | str]]): The maze grid
 
         Returns:
-            list[tuple[int, int]]: List of valid neighbor coordinates
+            (list[tuple[int, int]]): List of valid neighbor coordinates
         """
         directions = [(-2, 0), (2, 0), (0, -2), (0, 2)]
         neighbors = []

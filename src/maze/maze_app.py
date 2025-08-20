@@ -1,47 +1,25 @@
 from collections import deque
 import pygame
-
 from src.genetic.population import Population
 from src.maze.maze_generator import MazeGenerator
+import asyncio
 
 
 class MazeApp:
     """
     MazeApp runs a genetic algorithm simulation to solve a randomly generated maze.
 
-    It handles:
+    Handles:
         - Maze generation
         - Rendering the maze and individuals using Pygame
         - Stepping through individuals in the population
         - Evolving the population when all individuals finish
         - BFS pathfinding for the optimal path (used to guide the population)
-
-    Attributes:
-        CELL_SIZE (int): Size of each cell in pixels.
-        running (bool): Controls the main loop.
-        rows (int): Number of rows in the maze.
-        cols (int): Number of columns in the maze.
-        maze_generator (MazeGenerator): Instance to generate the maze.
-        grid (list[list[int]]): 2D list representing the maze grid.
-        index_generation (int): Current generation index.
-        screen (pygame.Surface): Pygame window.
-        colors (dict): Mapping of cell types to colors.
-        population (Population): Current population of individuals solving the maze.
-        people_update (int): Pygame event ID for population updates.
     """
 
     CELL_SIZE = 40
 
     def __init__(self, rows, cols, initial_population_size, refreshing_timer):
-        """
-        Initialize MazeApp.
-
-        Args:
-            rows (int): Number of rows in the maze.
-            cols (int): Number of columns in the maze.
-            initial_population_size (int): Number of individuals in the population.
-            refreshing_timer (int): Pygame timer in milliseconds for each step update.
-        """
         pygame.init()
         pygame.display.set_caption("Genetic maze solver")
         self.people_update = pygame.USEREVENT
@@ -70,6 +48,9 @@ class MazeApp:
         """
         Draw the maze and all individuals on the Pygame screen.
         """
+        # Fond blanc pour éviter le noir
+        self.screen.fill((255, 255, 255))
+
         for r in range(self.rows):
             for c in range(self.cols):
                 cell = self.grid[r][c]
@@ -105,17 +86,6 @@ class MazeApp:
     def bfs(self, maze, start, end, rows, cols):
         """
         Find the shortest path from start to end in the maze using BFS.
-
-        Args:
-            maze (list[list[int]]): The maze grid.
-            start (tuple[int, int]): Starting cell coordinates (row, col).
-            end (tuple[int, int]): Target cell coordinates (row, col).
-            rows (int): Number of rows in the maze.
-            cols (int): Number of columns in the maze.
-
-        Returns:
-            list[tuple[int, int]]: Ordered list of coordinates from start to end.
-            Returns None if no path exists.
         """
         queue = deque([start])
         visited = {start}
@@ -144,12 +114,12 @@ class MazeApp:
                         parent[(nx, ny)] = (x, y)
         return None
 
-    def run(self):
+    async def run_async(self):
         """
-        Start the main Pygame loop to run the simulation.
+        Async main loop compatible with Pygbag.
         """
         while self.running:
             self.handle_events()
             self.draw()
             pygame.display.flip()
-        pygame.quit()
+            await asyncio.sleep(0)

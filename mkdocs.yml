@@ -1,4 +1,9 @@
 site_name: Genetic Maze
+
+nav:
+  - Jeu:
+      - Lancer le jeu: web/index.html
+
 theme:
   name: material
 
@@ -14,4 +19,3 @@ plugins:
             heading_level: 2
             members_order: source
             docstring_style: google
-

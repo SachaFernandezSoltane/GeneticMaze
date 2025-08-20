@@ -23,3 +23,9 @@ __pycache__/
 
 # Windows
 Thumbs.db
+
+
+build/
+.build/
+site/
+.site/
